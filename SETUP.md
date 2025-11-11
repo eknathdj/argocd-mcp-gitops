@@ -66,7 +66,7 @@ kubectl wait --for=condition=available --timeout=300s deployment/argocd-server -
 argocd admin initial-password -n argocd
 
 # Port forward ArgoCD server (in a separate terminal)
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl port-forward svc/argocd-server -n argocd 8080:80
 
 # Access ArgoCD at https://localhost:8080
 # Login with username: admin and the password from above

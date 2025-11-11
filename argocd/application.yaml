@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/eknathdj/argocd-mcdp-gitops.git
+    repoURL: https://github.com/eknathdj/argocd-mcp-gitops.git
     targetRevision: main
     path: deploy/overlays/prod
   destination:
