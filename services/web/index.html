@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>App Status</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <style>body{font:16px system-ui, sans-serif;max-width:700px;margin:40px auto;padding:0 16px}</style>
+</head>
+<body>
+  <h1>App Status</h1>
+  <p>Health: <span id="health">…</span></p>
+  <p>Time: <span id="time">…</span></p>
+  <script>
+    async function go(){
+      const h = await fetch('/api/health').then(r=>r.json()).catch(()=>({status:'error'}));
+      const t = await fetch('/api/time').then(r=>r.json()).catch(()=>({now:'error'}));
+      document.getElementById('health').textContent = h.status;
+      document.getElementById('time').textContent = t.now;
+    }
+    go(); setInterval(go, 5000);
+  </script>
+</body>
+</html>
