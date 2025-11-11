@@ -38,10 +38,10 @@ jobs:
           services=$(echo "$changed" | grep -oP '^services/\K[^/]+' | sort -u | tr '\n' ' ')
           # If no services changed (e.g., only deploy files), build all services as a fallback.
           if [ -z "$services" ]; then services="api web"; fi
-
+          
           echo "services=$services" >> $GITHUB_OUTPUT
-          echo "$services" | sed 's/ /\n/g' | grep . | jq -R '{"service": .}' | jq -s '.' > matrix.json
-          echo "matrix=$(cat matrix.json)" >> $GITHUB_OUTPUT
+          matrix=$(echo "$services" | sed 's/ /\n/g' | grep . | jq -R '{"service": .}' | jq -s '.' | jq -c .)
+          echo "matrix=$matrix" >> $GITHUB_OUTPUT
 
   build-and-push:
     runs-on: ubuntu-latest
