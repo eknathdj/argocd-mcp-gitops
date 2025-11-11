@@ -10,8 +10,7 @@ This repo demonstrates:
 ## Quick start
 
 1. **Replace placeholders**
-   - In `deploy/base/kustomization.yaml` and deployments, images use `ghcr.io/OWNER/...` — the workflow will rewrite tags automatically.
-   - In `argocd/application.yaml`, change `https://github.com/eknathdj/argocd-mcdp-gitops.git` to your repo URL.
+    - In `argocd/application.yaml`, change `https://github.com/eknathdj/argocd-mcdp-gitops.git` to your repo URL.
 
 2. **Push to GitHub** (branch `main`).
 

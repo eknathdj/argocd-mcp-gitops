@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: ghcr.io/OWNER/api:latest
+        image: ghcr.io/eknathdj/api:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

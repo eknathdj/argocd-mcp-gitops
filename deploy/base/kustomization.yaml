@@ -10,7 +10,7 @@ resources:
   - ingress.yaml
 
 images:
-  - name: ghcr.io/OWNER/api
-    newTag: latest
-  - name: ghcr.io/OWNER/web
-    newTag: latest
+   - name: ghcr.io/eknathdj/api
+     newTag: latest
+   - name: ghcr.io/eknathdj/web
+     newTag: latest
