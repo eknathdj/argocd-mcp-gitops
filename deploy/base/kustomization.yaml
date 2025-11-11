@@ -2,15 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: app
 resources:
-  - namespace.yaml
-  - api-deployment.yaml
-  - api-service.yaml
-  - web-deployment.yaml
-  - web-service.yaml
-  - ingress.yaml
+- namespace.yaml
+- api-deployment.yaml
+- api-service.yaml
+- web-deployment.yaml
+- web-service.yaml
+- ingress.yaml
 
 images:
-   - name: ghcr.io/eknathdj/api
-     newTag: latest
-   - name: ghcr.io/eknathdj/web
-     newTag: latest
+- name: ghcr.io/eknathdj/api
+  newName: ghcr.io/eknathdj/api
+  newTag: 26c5b56
+- name: ghcr.io/eknathdj/web
+  newName: ghcr.io/eknathdj/web
+  newTag: 26c5b56
